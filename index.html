@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 5</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <nav class="topnav" id="myTopNav">
+        <ul>
+            <li class="active">
+                <div class="titleNav">
+                    <a href="">Home</a>
+                </div>
+            </li>
+            <li>
+                <div class="titleNav">
+                    <a href="">About</a>
+                </div>
+            </li>
+            <li>
+                <div class="titleNav">
+                    <a href="">News</a>
+                </div>
+            </li>
+            <li>
+                <div class="titleNav">
+                    <a href="">Contact</a>
+                </div>
+            </li>
+            <li class="icon" onclick="openMenu()">
+                <img src="hamburger.svg" alt="hamburger">
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, ad?</h2>
+    </header>
+    <div class="col-s-11 container" id="main">
+        <aside class="aside col-3">
+            <h3>Aside</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum.</p>
+        </aside>
+        <section class="section col-7">
+            <h3>Content</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, harum?</p>
+            <img src="pic.jpg" alt="picture">
+        </section>
+    </div>
+    <div class="col-s-11 container" id="info">
+        <div class="col-s-7 infoContent">
+            <p>This is a nice picture</p>
+            <img src="pic2.jpg" alt="">
+        </div>
+    </div>
+    <div class="col-11 container">
+        <div class='listPicture'>
+            <img src="pic2.jpg" alt="">
+            <img src="pic2.jpg" alt="">
+            <img src="pic2.jpg" alt="">
+            <img src="pic2.jpg" alt="">
+            <img src="pic2.jpg" alt="">
+            <img src="pic2.jpg" alt="">
+            <img src="pic2.jpg" alt="">
+            <img src="pic2.jpg" alt="">
+            <img src="pic2.jpg" alt="">
+        </div>
+    </div>
+    <div id="scrollTopBtn" onclick="toTop()">
+        <div class="to-top">
+        </div>
+    </div>
+    <footer>
+        <p>Copyright@2019</p>
+    </footer>
+    <script>
+        let topnav = document.getElementById("myTopNav");
+        let onScrollTopBtn = document.getElementById("scrollTopBtn");
+
+        function openMenu() {
+            if (topnav.className === "topnav") {
+                topnav.className += " responsive";
+
+            } else {
+                topnav.className = "topnav";
+            }
+        }
+
+        window.addEventListener("scroll", function (event) {
+            var scroll = this.scrollY;
+            switch (true) {
+                case (scroll < 350):
+                    return (topnav.style.display = "block", onScrollTopBtn.style.display = "none");
+                    break;
+                case (scroll > 350 && scroll < 700):
+                    return (topnav.style.display = "none", onScrollTopBtn.style.display = "none");
+                    break;
+                default:
+                    return (onScrollTopBtn.style.display = "block");
+                    break;
+            }
+        });
+        function toTop() {
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+
+</html>
